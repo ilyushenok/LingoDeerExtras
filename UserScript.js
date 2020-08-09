@@ -12,7 +12,6 @@
 
 window.addEventListener('load', function() {
 	'use strict';
-	var renderingDelayMs = 750;
 	var checkInterval = 250;
 	var extrasEnabledAtt = 'extrasenabled';
 
@@ -23,12 +22,10 @@ window.addEventListener('load', function() {
 
 	var playAudio = function() {
 		if (isCorrect()) {
-			setTimeout(function() {
-				var playBtn = document.getElementsByClassName('checkLabaWrapContainer')[0];
-				if (playBtn) {
-					playBtn.click();
-				}
-			}, renderingDelayMs);
+			var playBtn = document.getElementsByClassName('checkLabaWrapContainer')[0];
+			if (playBtn) {
+				playBtn.click();
+			}
 		}
 	};
 
