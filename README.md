@@ -1,5 +1,8 @@
 # LingoDeerExtras
-Extras for LingoDeer web app 
+Extras for LingoDeer web app. Greasemonkey/Tampermonkey script.
+
+# Installation
+Add script by URL: `https://raw.githubusercontent.com/ilyushenok/LingoDeerExtras/master/UserScript.js`
 
 # Features
 - Keyboard controls:
