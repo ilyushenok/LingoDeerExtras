@@ -1,0 +1,65 @@
+.optionsArea {
+	counter-reset: option-n;
+}
+
+.optionsArea .option .item,
+.optionsArea .option .item .wrapOption {
+	position: relative;
+}
+
+.modelContainerSent.sentenceModel3 .scrollArea .optionsArea .option .item .wrapOption::before {
+	position: absolute;
+	display: block;
+	counter-increment: option-n;
+	content: counter(option-n);
+	width: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transform: translateX(1px);
+	color: #000;
+}
+
+.modelContainerSent.sentenceModel3 .scrollArea .optionsArea .option .item .wrapOption .circle {
+	width: 30px !important;
+	height: 30px !important;
+}
+
+.modelContainerSent.sentenceModel3 .scrollArea .optionsArea .option.active .item .wrapOption::before {
+	color: #fff;
+}
+
+.modelContainerSent.sentenceModel3 .scrollArea .optionsArea .option.active .item .wrapOption .circle {
+	background-color: #fbb10b;
+}
+
+.modelContainerSent.sentenceModel3 .scrollArea .optionsArea .option .item .wrapOption .circle {
+	width: 30px;
+    height: 30px;
+}
+
+.modelContainerWord.wordModel1 .optionsArea .option .item::before {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	counter-increment: option-n;
+	content: counter(option-n);
+	width: 30px;
+    height: 30px;
+	font-size: 22px;
+	border-radius: 100%;
+	background-color: #fff;
+	border: 1px solid #979797;
+	color: #000;
+}
+
+.modelContainerWord.wordModel1 .optionsArea .option.active .item::before {
+	background-color: #fbb10b;
+	border-color: #fbb10b;
+	color: #fff;
+}
