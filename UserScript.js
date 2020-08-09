@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LingoDeer Extras
 // @namespace    https://www.lingodeer.com
-// @version      0.1.6
+// @version      0.1.7
 // @description  Extras for LingoDeer web app
 // @author       Ilya Ilyushenok
 // @match        https://www.lingodeer.com/learn-language*
