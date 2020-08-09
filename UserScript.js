@@ -10,7 +10,7 @@
 
 
 window.addEventListener('load', function() {
-    'use strict';
+	'use strict';
 	var renderingDelayMs = 750;
 	var checkInterval = 250;
 	var extrasEnabledAtt = 'extrasenabled';
