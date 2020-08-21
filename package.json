@@ -1,0 +1,23 @@
+{
+  "name": "lingodeerextras",
+  "version": "0.1.8",
+  "description": "Extras for LingoDeer web app",
+  "main": "Script.js",
+  "dependencies": {
+    "clean-css": "^4.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "release": "node build-UserScript.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyushenok/LingoDeerExtras.git"
+  },
+  "author": "Ilya Ilyushenok",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ilyushenok/LingoDeerExtras/issues"
+  },
+  "homepage": "https://github.com/ilyushenok/LingoDeerExtras#readme"
+}
