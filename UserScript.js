@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LingoDeer Extras
 // @namespace    https://www.lingodeer.com
-// @version      0.1.8
+// @version      0.1.9
 // @description  Extras for LingoDeer web app
 // @author       Ilya Ilyushenok
 // @match        https://www.lingodeer.com/learn-language*
@@ -71,6 +71,18 @@ window.addEventListener('load', function() {
 			checkBtn.addEventListener('click', function(){
 				playAudio();
 			});
+		}
+
+		var el = document.querySelector('.isCheckedPanel');
+		if (el && !el.hasAttribute('played')) {
+			setTimeout(function() {
+				document.querySelector('.checkLabaWrapContainer.right').click();
+			}, 500);
+			el.setAttribute('played', '');
+		}
+		var el2 = document.querySelector('.checkPanel');
+		if (el2 && el2.hasAttribute('played')) {
+			el2.removeAttribute('played');
 		}
 	}, checkInterval);
 });

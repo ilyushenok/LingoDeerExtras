@@ -61,6 +61,18 @@ window.addEventListener('load', function() {
 				playAudio();
 			});
 		}
+
+		var el = document.querySelector('.isCheckedPanel');
+		if (el && !el.hasAttribute('played')) {
+			setTimeout(function() {
+				document.querySelector('.checkLabaWrapContainer.right').click();
+			}, 500);
+			el.setAttribute('played', '');
+		}
+		var el2 = document.querySelector('.checkPanel');
+		if (el2 && el2.hasAttribute('played')) {
+			el2.removeAttribute('played');
+		}
 	}, checkInterval);
 });
 
