@@ -54,14 +54,6 @@ window.addEventListener('load', function() {
 			});
 		}
 
-		var checkBtn = document.getElementsByClassName('checkBtn')[0];
-		if (checkBtn && !checkBtn.hasAttribute(extrasEnabledAtt)) {
-			checkBtn.setAttribute(extrasEnabledAtt, '');
-			checkBtn.addEventListener('click', function(){
-				playAudio();
-			});
-		}
-
 		var el = document.querySelector('.isCheckedPanel');
 		if (el && !el.hasAttribute('played')) {
 			setTimeout(function() {
