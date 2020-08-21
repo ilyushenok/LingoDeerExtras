@@ -1,3 +1,45 @@
+.lingodeer-extras {
+	position: fixed;
+    z-index: 1000;
+    right: 0;
+    width: 200px;
+    top: 50%;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: inset 0 0 0 2px #ea9500;
+    border-radius: 8px 0 0 8px;
+    transform: translate(4px, -50%);
+    padding: 5px 0;
+    transform: translate(180px, -50%);
+    transition:
+		transform .25s ease-in-out,
+		box-shadow 0.25s ease-in-out;
+}
+
+.lingodeer-extras:hover {
+	transform: translate(4px, -50%);
+	box-shadow:
+		inset 0 0 0 2px #ea9500,
+		1px 1px 10px 1px #eee;
+}
+
+.lingodeer-extras_inner {
+	position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.lingodeer-extras_title {
+	position: absolute;
+    bottom: -13px;
+    left: -8px;
+    margin: 0 10px;
+    font-size: 12px;
+    text-align: center;
+    transform-origin: left top;
+    transform: rotateZ(-90deg);
+}
+
 .optionsArea {
 	counter-reset: option-n;
 }

@@ -27,6 +27,10 @@ window.addEventListener('load', function() {
 		if (app && !app.hasAttribute(extrasEnabledAtt)) {
 			app.setAttribute(extrasEnabledAtt, '');
 
+			var settings = document.createElement('div');
+			settings.innerHTML = '@@settings@@';
+			document.body.appendChild(settings.children[0]);
+
 			var style = document.createElement('style');
 			style.innerHTML = plainStyles;
 			document.head.appendChild(style);
