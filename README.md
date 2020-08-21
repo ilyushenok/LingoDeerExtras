@@ -8,6 +8,7 @@ Add script by URL: `https://raw.githubusercontent.com/ilyushenok/LingoDeerExtras
 - Keyboard controls:
   - Press 'Space' to play audio
   - Press '1'-'9' or '0' to select options 1 through 10. Holding 'Shift' while pressing enables selecting options 11 through 20.
+- Audio autoplay on correct answer
 
 # Building
 Before building you need to install dependencies:
