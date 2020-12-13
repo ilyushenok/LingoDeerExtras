@@ -1,6 +1,6 @@
 {
   "name": "lingodeerextras",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Extras for LingoDeer web app",
   "main": "Script.js",
   "dependencies": {
