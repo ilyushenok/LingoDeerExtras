@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         LingoDeer Extras
 // @namespace    https://www.lingodeer.com
-// @version      0.1.11
+// @version      0.1.13
 // @description  Extras for LingoDeer web app
 // @author       Ilya Ilyushenok
 // @match        https://www.lingodeer.com/learn-language*
+// @match        https://lingodeer.com/learn-language*
 // @grant        none
-// @scriptUpdateURL https://raw.githubusercontent.com/ilyushenok/LingoDeerExtras/master/UserScript.js
+// @updateURL    https://raw.githubusercontent.com/ilyushenok/LingoDeerExtras/master/UserScript.js
+// @downloadURL  https://raw.githubusercontent.com/ilyushenok/LingoDeerExtras/master/UserScript.js
 // ==/UserScript==
 
 window.addEventListener('load', function() {

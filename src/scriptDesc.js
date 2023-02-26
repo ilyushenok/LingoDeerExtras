@@ -5,6 +5,8 @@
 // @description  @@desc@@
 // @author       @@author@@
 // @match        https://www.lingodeer.com/learn-language*
+// @match        https://lingodeer.com/learn-language*
 // @grant        none
-// @scriptUpdateURL https://raw.githubusercontent.com/ilyushenok/LingoDeerExtras/master/UserScript.js
+// @updateURL    https://raw.githubusercontent.com/ilyushenok/LingoDeerExtras/master/UserScript.js
+// @downloadURL  https://raw.githubusercontent.com/ilyushenok/LingoDeerExtras/master/UserScript.js
 // ==/UserScript==
