@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LingoDeer Extras
 // @namespace    https://www.lingodeer.com
-// @version      0.1.13
+// @version      0.1.14
 // @description  Extras for LingoDeer web app
 // @author       Ilya Ilyushenok
 // @match        https://www.lingodeer.com/learn-language*
@@ -51,12 +51,23 @@ window.addEventListener('load', function() {
 
 				if (!isCorrect() && 48 <= e.keyCode && e.keyCode <= 57) {
 					var index = (e.shiftKey ? 10 : 0) + (e.keyCode === 48 ? 9 : (e.keyCode - 49));
-					var optionsArea = document.getElementsByClassName('optionsArea')[0];
+					var optionsArea =
+						document.getElementsByClassName('optionsArea')[0] ||
+						document.querySelector('.sentenceTitle + .sentenceStem');
 					if (optionsArea) {
-						var options = optionsArea.getElementsByClassName('option');
+						var options =
+							optionsArea.getElementsByClassName('option');
+
+						if (!options.length) {
+							options = optionsArea.getElementsByClassName('wrapOption');
+						}
 
 						if (index < options.length) {
-							var option = options[index].getElementsByClassName('item')[0];
+							var opt = options[index];
+							var option = 
+								[...opt.classList].includes('wrapOption')
+									? opt
+									: opt.getElementsByClassName('item')[0];
 
 							if (option) {
 								option.click();
@@ -81,4 +92,4 @@ window.addEventListener('load', function() {
 	}, checkInterval);
 });
 
-var plainStyles = '.optionsArea{counter-reset:option-n}.optionsArea .option{border-radius:9px!important}.optionsArea .option .item,.optionsArea .option .item .wrapOption{position:relative}.optionsArea .option .item .wrapOption .circle{opacity:0!important}.optionsArea .option .item{border-radius:8px!important}.optionsArea .option .item::before{position:absolute;top:8px;left:8px;display:flex;align-items:center;justify-content:center;counter-increment:option-n;content:counter(option-n);width:30px;height:30px;font-size:22px;border-radius:100%;background-color:#fff;border:1px solid #979797;color:#000}.optionsArea .option.active .item::before{background-color:#1caff6;border-color:#1caff6;color:#fff}.wordModel5 .optionsArea{padding-top:10px!important}.sentenceModel10 .optionsArea .option .item::before,.sentenceModel13 .optionsArea .option .item::before,.sentenceModel5 .optionsArea .option .item::before,.wordModel10 .optionsArea .option .item::before,.wordModel5 .optionsArea .option .item::before,.wordModel9 .optionsArea .option .item::before{top:-10px;left:-10px;width:20px;height:20px;font-size:12px}.sentenceModel13 .optionsAreaWrap .center,.sentenceModel13 .optionsAreaWrap .left,.sentenceModel13 .optionsAreaWrap .right{padding-top:10px}.modelContainerSent.sentenceModel13 .optionsArea .optionsAreaWrap .center .oneRow.active{display:block!important;margin:0!important;padding:0!important;overflow:hidden!important;height:0!important}';
+var plainStyles = '.optionsArea,.sentenceTitle+.sentenceStem{counter-reset:option-n}.optionsArea .option{border-radius:9px!important}.optionsArea .option .item,.optionsArea .option .item .wrapOption,.sentenceTitle+.sentenceStem .wrapOption{position:relative}.optionsArea .option .item .wrapOption .circle,.sentenceTitle+.sentenceStem .wrapOption .closeWrap{opacity:0!important}.optionsArea .option .item{border-radius:8px!important}.optionsArea .option .item::before,.sentenceTitle+.sentenceStem .wrapOption::before{position:absolute;top:8px;left:8px;display:flex;align-items:center;justify-content:center;counter-increment:option-n;content:counter(option-n);width:30px;height:30px;font-size:22px;border-radius:100%;background-color:#fff;border:1px solid #979797;color:#000}.optionsArea .option.active .item::before{background-color:#1caff6;border-color:#1caff6;color:#fff}.wordModel5 .optionsArea{padding-top:10px!important}.sentenceModel10 .optionsArea .option .item::before,.sentenceModel13 .optionsArea .option .item::before,.sentenceModel2 .sentenceTitle+.sentenceStem .wrapOption::before,.sentenceModel5 .optionsArea .option .item::before,.wordModel10 .optionsArea .option .item::before,.wordModel5 .optionsArea .option .item::before,.wordModel9 .optionsArea .option .item::before{top:-10px;left:-10px;width:20px;height:20px;font-size:12px}.sentenceModel2 .sentenceTitle+.sentenceStem .wrapOption::before{z-index:1}.sentenceModel13 .optionsAreaWrap .center,.sentenceModel13 .optionsAreaWrap .left,.sentenceModel13 .optionsAreaWrap .right{padding-top:10px}.modelContainerSent.sentenceModel13 .optionsArea .optionsAreaWrap .center .oneRow.active{display:block!important;margin:0!important;padding:0!important;overflow:hidden!important;height:0!important}';

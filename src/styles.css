@@ -1,4 +1,5 @@
-.optionsArea {
+.optionsArea,
+.sentenceTitle + .sentenceStem {
 	counter-reset: option-n;
 }
 
@@ -7,11 +8,13 @@
 }
 
 .optionsArea .option .item,
-.optionsArea .option .item .wrapOption {
+.optionsArea .option .item .wrapOption,
+.sentenceTitle + .sentenceStem .wrapOption {
 	position: relative;
 }
 
-.optionsArea .option .item .wrapOption .circle {
+.optionsArea .option .item .wrapOption .circle,
+.sentenceTitle + .sentenceStem .wrapOption .closeWrap {
 	opacity: 0 !important;
 }
 
@@ -20,7 +23,8 @@
 	border-radius: 8px !important;
 }
 
-.optionsArea .option .item::before {
+.optionsArea .option .item::before,
+.sentenceTitle + .sentenceStem .wrapOption::before {
 	position: absolute;
 	top: 8px;
 	left: 8px;
@@ -53,12 +57,17 @@
 .wordModel10 .optionsArea .option .item::before,
 .sentenceModel5 .optionsArea .option .item::before,
 .sentenceModel10 .optionsArea .option .item::before,
-.sentenceModel13 .optionsArea .option .item::before {
+.sentenceModel13 .optionsArea .option .item::before,
+.sentenceModel2 .sentenceTitle + .sentenceStem .wrapOption::before {
 	top: -10px;
     left: -10px;
 	width: 20px;
     height: 20px;
     font-size: 12px;
+}
+
+.sentenceModel2 .sentenceTitle + .sentenceStem .wrapOption::before { 
+	z-index: 1;
 }
 
 .sentenceModel13 .optionsAreaWrap .left,

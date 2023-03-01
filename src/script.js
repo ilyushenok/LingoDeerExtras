@@ -38,12 +38,23 @@ window.addEventListener('load', function() {
 
 				if (!isCorrect() && 48 <= e.keyCode && e.keyCode <= 57) {
 					var index = (e.shiftKey ? 10 : 0) + (e.keyCode === 48 ? 9 : (e.keyCode - 49));
-					var optionsArea = document.getElementsByClassName('optionsArea')[0];
+					var optionsArea =
+						document.getElementsByClassName('optionsArea')[0] ||
+						document.querySelector('.sentenceTitle + .sentenceStem');
 					if (optionsArea) {
-						var options = optionsArea.getElementsByClassName('option');
+						var options =
+							optionsArea.getElementsByClassName('option');
+
+						if (!options.length) {
+							options = optionsArea.getElementsByClassName('wrapOption');
+						}
 
 						if (index < options.length) {
-							var option = options[index].getElementsByClassName('item')[0];
+							var opt = options[index];
+							var option = 
+								[...opt.classList].includes('wrapOption')
+									? opt
+									: opt.getElementsByClassName('item')[0];
 
 							if (option) {
 								option.click();
